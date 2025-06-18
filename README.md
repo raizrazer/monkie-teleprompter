@@ -19,9 +19,65 @@
 - 🚀 **Zero Dependencies**: Pure vanilla JavaScript, no external libraries required
 - 🔧 **Debug Mode**: Built-in debugging for development
 
+## ⚡ Installation
+
+### CDN (Easiest)
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/raizrazer/monkie-teleprompter/monkie-telepromter.js"></script>
+```
+
+### Download
+
+```bash
+git clone https://github.com/raizrazer/monkie-teleprompter.git
+```
+
+### Direct Download
+
+[Download monkie-telepromter.js](https://cdn.jsdelivr.net/gh/raizrazer/monkie-teleprompter/monkie-telepromter.js) (Right-click → Save As)
+
 ## 🚀 Quick Start
 
-### 1. Download the Files
+### Option 1: Use CDN (Recommended)
+
+Include the teleprompter directly from CDN - no download required!
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Teleprompter</title>
+  </head>
+  <body>
+    <!-- Your teleprompter container -->
+    <div id="my-teleprompter">
+      <div id="controls">
+        <button id="mtp-play">Play</button>
+        <button id="mtp-pause">Pause</button>
+        <button id="mtp-reverse">⬆️Reverse</button>
+        <input type="range" id="mtp-speed" min="1" max="10" value="1" />
+        <label>Speed:<span id="speed-value">1</span></label>
+      </div>
+      <div class="content" contenteditable="true">
+        Your script content goes here...
+      </div>
+    </div>
+
+    <!-- Include from CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/raizrazer/monkie-teleprompter/monkie-telepromter.js"></script>
+    <script>
+      const teleprompter = new monkieTelePrompter(
+        document.getElementById("my-teleprompter")
+      );
+    </script>
+  </body>
+</html>
+```
+
+### Option 2: Download the Files
 
 Clone or download the repository:
 
@@ -30,7 +86,7 @@ git clone https://github.com/raizrazer/monkie-teleprompter.git
 cd monkie-teleprompter
 ```
 
-### 2. Try the Demo
+### Option 3: Try the Demo
 
 Open the sample file in your browser:
 
@@ -39,7 +95,36 @@ Open the sample file in your browser:
 open sample/index.html
 ```
 
-### 3. Basic HTML Setup
+## 🌐 CDN Options
+
+Choose from multiple CDN providers for maximum reliability:
+
+### jsDelivr (Recommended)
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/raizrazer/monkie-teleprompter/monkie-telepromter.js"></script>
+```
+
+### Statically
+
+```html
+<script src="https://cdn.statically.io/gh/raizrazer/monkie-teleprompter/main/monkie-telepromter.js"></script>
+```
+
+### GitHack
+
+```html
+<script src="https://raw.githack.com/raizrazer/monkie-teleprompter/main/monkie-telepromter.js"></script>
+```
+
+### Specific Version (Recommended for Production)
+
+```html
+<!-- Replace 'v1.0.0' with the actual version tag -->
+<script src="https://cdn.jsdelivr.net/gh/raizrazer/monkie-teleprompter@v1.0.0/monkie-telepromter.js"></script>
+```
+
+## 📝 Manual Setup
 
 ```html
 <!DOCTYPE html>
