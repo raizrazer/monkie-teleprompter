@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![No Dependencies](https://img.shields.io/badge/Dependencies-None-green.svg)](https://github.com/yourusername/monkie-teleprompter)
+[![No Dependencies](https://img.shields.io/badge/Dependencies-None-green.svg)](https://github.com/raizrazer/monkie-teleprompter)
 
 ## ✨ Features
 
@@ -26,7 +26,7 @@
 Clone or download the repository:
 
 ```bash
-git clone https://github.com/yourusername/monkie-teleprompter.git
+git clone https://github.com/raizrazer/monkie-teleprompter.git
 cd monkie-teleprompter
 ```
 
@@ -321,7 +321,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🐛 Issues & Support
 
-Found a bug or need help? Please [open an issue](https://github.com/yourusername/monkie-teleprompter/issues) on GitHub.
+Found a bug or need help? Please [open an issue](https://github.com/raizrazer/monkie-teleprompter/issues) on GitHub.
 
 ## 🙏 Acknowledgments
 
