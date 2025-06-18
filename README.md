@@ -30,7 +30,16 @@ git clone https://github.com/yourusername/monkie-teleprompter.git
 cd monkie-teleprompter
 ```
 
-### 2. Basic HTML Setup
+### 2. Try the Demo
+
+Open the sample file in your browser:
+
+```bash
+# Open sample/index.html in your browser
+open sample/index.html
+```
+
+### 3. Basic HTML Setup
 
 ```html
 <!DOCTYPE html>
@@ -45,11 +54,11 @@ cd monkie-teleprompter
     <div id="my-teleprompter">
       <!-- Control Panel -->
       <div id="controls">
-        <button id="mtp-play">▶️ Play</button>
-        <button id="mtp-pause">⏸️ Pause</button>
-        <button id="mtp-reverse">⬆️ Reverse</button>
+        <button id="mtp-play">Play</button>
+        <button id="mtp-pause">Pause</button>
+        <button id="mtp-reverse">⬆️Reverse</button>
         <input type="range" id="mtp-speed" min="1" max="10" value="1" />
-        <label>Speed: <span id="speed-value">1</span></label>
+        <label>Speed:<span id="speed-value">1</span></label>
       </div>
 
       <!-- Your Script Content -->
@@ -61,10 +70,8 @@ cd monkie-teleprompter
     </div>
 
     <!-- Include the Script -->
-    <script src="monkie-telepromter.js" type="module"></script>
-    <script type="module">
-      import monkieTelePrompter from "./monkie-telepromter.js";
-
+    <script src="monkie-telepromter.js"></script>
+    <script>
       // Initialize the teleprompter
       const teleprompter = new monkieTelePrompter(
         document.getElementById("my-teleprompter")
@@ -74,7 +81,7 @@ cd monkie-teleprompter
 </html>
 ```
 
-### 3. Add Some Styling (Optional)
+### 4. Add Some Styling (Optional)
 
 ```css
 #my-teleprompter {
@@ -130,7 +137,7 @@ const teleprompter = new monkieTelePrompter(container);
 
 **Throws:**
 
-- Error if container is null or not found
+- Error if container is null with message: "Container not found, Add a container with id monkieprompter or any '#id' then pass it to the new monkieTelePrompter('#id')"
 
 ### Methods
 
@@ -167,9 +174,10 @@ teleprompter.reverse();
 
 #### Runtime Properties
 
-- `speed`: Current scrolling speed
-- `scrollPosition`: Current scroll position
+- `speed`: Current scrolling speed (calculated as slider value × MULTIPLIER)
+- `scrollPosition`: Current scroll position in pixels
 - `reverseMode`: Boolean indicating reverse mode status
+- `rafId`: RequestAnimationFrame ID for controlling animation loop
 
 ## 🎛️ Control Elements
 
@@ -210,16 +218,32 @@ const teleprompter = new monkieTelePrompter(container);
 // Start playing
 teleprompter.play();
 
-// Change speed programmatically
-teleprompter.speed = 2.5;
+// Change speed programmatically (remember to account for MULTIPLIER)
+teleprompter.speed = 2.5; // This is the final speed, not slider value
 
 // Toggle reverse mode
 teleprompter.reverse();
+
+// Check current state
+console.log("Is playing:", teleprompter.rafId !== null);
+console.log("Is in reverse:", teleprompter.reverseMode);
 
 // Pause after 10 seconds
 setTimeout(() => {
   teleprompter.pause();
 }, 10000);
+```
+
+### Working with the Sample
+
+The repository includes a complete working example in the `sample/` directory:
+
+```bash
+# Navigate to sample directory
+cd sample
+
+# Open index.html in your browser
+# The sample demonstrates all features with Lorem Ipsum text
 ```
 
 ## 🎨 Styling Tips
@@ -257,7 +281,17 @@ body {
 }
 ```
 
-## 🔧 Browser Compatibility
+## � Project Structure
+
+```
+monkie-teleprompter/
+├── README.md                 # This documentation
+├── monkie-telepromter.js     # Main teleprompter class
+└── sample/
+    └── index.html           # Working demo example
+```
+
+## �🔧 Browser Compatibility
 
 - ✅ Chrome 60+
 - ✅ Firefox 55+
@@ -266,9 +300,10 @@ body {
 
 **Required Features:**
 
-- ES6 Modules
 - requestAnimationFrame
 - addEventListener
+- querySelector/querySelectorAll
+- ES6 Classes
 
 ## 🤝 Contributing
 

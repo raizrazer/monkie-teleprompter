@@ -103,4 +103,4 @@ class monkieTelePrompter {
   }
 }
 
-export default monkieTelePrompter;
+window.monkieTelePrompter = monkieTelePrompter;
